@@ -1,0 +1,33 @@
+MIT License
+
+Copyright (c) 2026 wuyunjiegithub
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------
+素材例外（Asset Exclusion）
+
+本授权仅覆盖本仓库的源代码（js/ css/ index.html vendor/ tools/ doc/ 等）。
+
+assets/ 目录下的 114 张水浒卡扫描图（standard/ villains/）以及 js/data.js 中
+摘录的人物资料，版权归原权利人（统一企业及相关资料整理者）所有，不在本 MIT
+授权范围内，亦不授予任何使用、复制、分发或商用许可。
+
+本仓库收录上述素材仅用于个人非商业的技术学习演示。若需公开部署或商业使用，
+请自行替换或删除 assets/ 目录及相应资料。

@@ -1,0 +1,15 @@
+# 录制产物
+*.mp4
+.frames/
+.chrome-demo-*/
+record_log.txt
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

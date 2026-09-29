@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>水滸英雄傳 · 星穹卡馆</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div id="loader">
+  <h1>水滸英雄傳</h1>
+  <p>星穹卡馆 · 布展中</p>
+  <div class="bar"><i id="barFill"></i></div>
+  <div id="pct">0%</div>
+  <p style="margin-top:10px; color:#5f6390;">个人非商用 · 仅限本机离线浏览</p>
+</div>
+
+<div class="hud" id="brand">
+  <h1>水滸英雄傳</h1>
+  <p>星穹卡馆 · 一百单八将</p>
+</div>
+<div class="hud" id="mode">自动导览中</div>
+
+<div id="controls">
+  <button id="ctrlToggle">展厅 / 工艺 ▾</button>
+  <div id="ctrlPanel">
+    <div class="barRow"><span class="barLabel">展厅</span><div id="layoutBar" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;"></div></div>
+    <div class="barRow"><span class="barLabel">工艺</span><div id="craftBar" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;"></div></div>
+    <div id="layoutHint"></div>
+    <div class="barRow"><span class="barLabel">特效</span><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;"><button class="chip" id="shuffleBtn">✦ 洗牌重组</button></div></div>
+  </div>
+  <div id="tip"><b>点击卡牌</b> 飞近鉴赏 · <b>右键 / 双击</b> 翻面 · <b>拖动</b> 环视 · <b>鉴赏中左右滑动</b> 切换 · <b>ESC</b> 返回 · 键 <b>1/2/3</b> 换展厅 · <b>R</b> 洗牌重组</div>
+</div>
+
+<div id="credit">
+  卡图与资料源自爱好者整理的水浒卡收藏项目，原画版权归统一企业所有。<br>
+  本项目为个人非商用学习用途，禁止部署至任何公网环境。
+</div>
+
+<button id="entryBtn" style="display:none;">进入恶人密室</button>
+<button id="exitVaultBtn">返回主馆</button>
+
+<div id="panel">
+  <button class="close" id="pClose">✕</button>
+  <div id="pImgWrap"><img id="pImg" alt="卡面"></div>
+  <div id="pStar">天魁星</div>
+  <div id="pRank">梁山第 001 位 · 三十六天罡</div>
+  <div id="pNick">呼保义</div>
+  <div id="pName">宋 江</div>
+  <div id="pBio"></div>
+  <div id="pBack">—— 水浒英雄谱 · 统一小浣熊 1999 ——</div>
+</div>
+
+<!-- 直接双击打开（file://）时浏览器会拦截 ES 模块与贴图跨域，给出提示 -->
+<div id="fileWarn">
+  <div>
+    <h2>需要通过本地服务器打开</h2>
+    <p>本项目使用 ES 模块与外置卡图，浏览器不允许从 <code>file://</code> 直接加载。</p>
+    <p>请在项目目录执行下面任意一条命令，再访问 <b>http://localhost:8000</b></p>
+    <pre>python serve.py
+python -m http.server 8000
+npx serve .</pre>
+    <p>（Windows 也可直接双击 <code>serve.bat</code>）</p>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script type="module" src="js/main.js"></script>
+<script>
+  if (location.protocol === 'file:') document.getElementById('fileWarn').style.display = 'flex';
+</script>
+</body>
+</html>
