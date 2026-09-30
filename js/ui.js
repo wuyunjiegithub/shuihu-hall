@@ -3,23 +3,8 @@
  */
 import { assetUrl } from './core.js';
 
-/* 卡图原图（英雄卡、恶人卡都一样）是「人物面 + 信息面」左右拼接的，
- * 详情面板只展示左半人物面。裁好后转成 dataURL 缓存，避免每次打开面板重复解码。 */
-var faceCache = new Map();
-var panelToken = 0;
-function cardFace(url, cb) {
-  if (faceCache.has(url)) { cb(faceCache.get(url)); return; }
-  var img = new Image();
-  img.onload = function () {
-    var w = img.width / 2, h = img.height;
-    var c = document.createElement('canvas'); c.width = w; c.height = h;
-    c.getContext('2d').drawImage(img, 0, 0, w, h, 0, 0, w, h);
-    var u = c.toDataURL('image/webp', 0.92);
-    faceCache.set(url, u); cb(u);
-  };
-  img.onerror = function () { cb(url); };
-  img.src = url;
-}
+/* 详情面板直接展示完整原图：原图本身就是「正面 + 背面」左右拼接的，
+ * 一张图就能同时看到正反面，因此这里不做裁剪。 */
 
 export function initUI(cb) {
   var els = {
@@ -109,13 +94,10 @@ export function initUI(cb) {
       els.pBack.textContent = char.kind === 'villain'
         ? '—— 六大恶人 · 水浒英雄谱 ——'
         : '—— 水浒英雄谱 · 统一小浣熊 1999 ——';
-      panelToken++;                     // 防止快速切换时旧图覆盖新图
-      var token = panelToken;
-      cardFace(assetUrl(
+      // 展示完整原图：左半是正面人物，右半是背面信息，一张图看全正反面
+      els.pImg.src = assetUrl(
         (char.kind === 'villain' ? 'assets/villains/' : 'assets/standard/') + char.n + '.webp'
-      ), function (u) {
-        if (token === panelToken) els.pImg.src = u;
-      });
+      );
       els.panel.classList.add('open');
       els.mode.textContent = '鉴赏 · ' + char.name;
     },

@@ -60,6 +60,7 @@
     border:1px solid rgba(216,181,106,.45); background:rgba(0,0,0,.3); color:#d8b56a; cursor:pointer; }
   #pImgWrap { border:1px solid rgba(216,181,106,.4); padding:8px; background:rgba(0,0,0,.35); border-radius:6px; }
   #pImg { width:100%; display:block; border-radius:3px; }
+  #pImgTip { margin-top:6px; text-align:center; font-size:11px; letter-spacing:.18em; color:#7d7595; }
   #pStar { margin-top:18px; font-size:13px; letter-spacing:.3em; color:#9fb4e8; }
   #pStar.tg { color:#e8c476; }
   #pStar.vg { color:#ff8a8a; }
